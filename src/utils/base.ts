@@ -50,7 +50,7 @@ export function ToPrimitive(
             /* c */
             /* i */
             if (PreferredType !== 'number') {
-                throw new Error('preferred type must be "string" or "number"')
+                throw new TypeError('preferred type must be "string" or "number"')
             }
 
             /* ii */
