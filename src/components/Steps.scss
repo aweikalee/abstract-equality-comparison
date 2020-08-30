@@ -1,0 +1,47 @@
+.steps {
+    position: relative;
+    line-height: 1.6;
+    li {
+        margin: 4px 0;
+    }
+
+    &,
+    ol ol ol {
+        list-style-type: decimal;
+    }
+
+    ol,
+    ol ol ol ol {
+        list-style-type: lower-alpha;
+    }
+
+    ol ol,
+    ol ol ol ol ol {
+        list-style-type: lower-roman;
+    }
+
+    .ignore {
+        opacity: 50%;
+        .ignore {
+            opacity: 1;
+        }
+    }
+    .pass {
+        &::before {
+            content: '✓';
+            color: green;
+            position: absolute;
+            left: 0;
+            transform: scale(1.5);
+        }
+    }
+    .fail {
+        &::before {
+            content: '✗';
+            color: red;
+            position: absolute;
+            left: 0;
+            transform: scale(1.5);
+        }
+    }
+}
