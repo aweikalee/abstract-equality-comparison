@@ -21,5 +21,6 @@
     "ts-jest": "^26.3.0",
     "typescript": "^4.0.2",
     "vite": "^1.0.0-rc.4"
-  }
+  },
+  "keywords": ["抽象相等比较", "宽松相等比较", "loose comparison"]
 }
