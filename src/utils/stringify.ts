@@ -64,19 +64,19 @@ function createCircularReplacer(): Replacer {
 }
 
 function serializer(...replacers: Replacer[]): Replacer {
+    const _replacers = replacers.filter((replacer) => !!replacer)
     return function (key, value) {
-        return replacers.reduce((value, replacer) => {
+        return _replacers.reduce((value, replacer) => {
             return replacer.call(this, key, value)
         }, value)
     }
 }
 
-export function stringify(value: any, replacer?: Replacer, space?: string | number) {
-    if (!replacer) {
-        replacer = function (key, value) {
-            return value
-        }
-    }
+export function stringify(
+    value: any,
+    replacer?: Replacer,
+    space?: string | number
+) {
     const replacers = serializer(replacer, createCircularReplacer(), jsReplacer)
     const reuslt = JSON.stringify(value, replacers, space)
     return unmark(reuslt)
