@@ -5,9 +5,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "test": "jest",
-    "predeploy": "npm run test && npm run build",
-    "deploy": "gh-pages -d dist"
+    "test": "jest"
   },
   "dependencies": {
     "vue": "^3.0.0-rc.9"
@@ -15,12 +13,15 @@
   "devDependencies": {
     "@types/jest": "^26.0.10",
     "@vue/compiler-sfc": "^3.0.0-rc.9",
-    "gh-pages": "^3.1.0",
     "jest": "^26.4.2",
     "sass": "^1.26.10",
     "ts-jest": "^26.3.0",
     "typescript": "^4.0.2",
     "vite": "^1.0.0-rc.4"
   },
-  "keywords": ["抽象相等比较", "宽松相等比较", "loose comparison"]
+  "keywords": [
+    "抽象相等比较",
+    "宽松相等比较",
+    "loose comparison"
+  ]
 }
