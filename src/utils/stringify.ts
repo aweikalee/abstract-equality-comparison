@@ -20,7 +20,10 @@ const jsReplacer: Replacer = function (key, value) {
         case 'function':
             return mark('<Function>')
         case 'number':
-            return Number.isNaN(value) ? mark('NaN') : value
+            if (Number.isNaN(value)) return mark('NaN')
+            if (value === Infinity) return mark('Infinity')
+            if (value === -Infinity) return mark('-Infinity')
+            return value
         case 'symbol':
             return mark(value.toString())
         case 'bigint':

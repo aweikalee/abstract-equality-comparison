@@ -10,6 +10,8 @@ test(
     comparison('<Function>', () => {})
 )
 test('NaN', comparison('NaN', NaN))
+test('Infinity', comparison('Infinity', Infinity))
+test('-Infinity', comparison('-Infinity', -Infinity))
 test('symbol', comparison('Symbol(123)', Symbol(123)))
 test('bigint', comparison('123n', BigInt(123)))
 
